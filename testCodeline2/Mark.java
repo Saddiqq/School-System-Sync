@@ -5,6 +5,7 @@ public class Mark {
 	private int arabicMark;
 	private int englishMark;
 	
+	
 ////Math Marks////
 	public void setMathMark(int mathMark) {
 		this.mathMark = mathMark;		

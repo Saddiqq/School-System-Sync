@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TaskTest {
+	
 	public static final String green = "\u001B[92m";
 	public static final String ANSI_BLUE = "\u001B[96m";
 	public static final String white = "\033[37m";
@@ -11,9 +12,9 @@ public class TaskTest {
 	public static final String ANSI_purple = "\033[35m";
 	public static final String cyan = "\033[36m";
 	public static final String red = "\033[31m";
-
+	
 	public static void main(String[] args) {
-
+        
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Department> departmentList = new ArrayList<Department>();
@@ -42,7 +43,7 @@ public class TaskTest {
 
 		while (condtion1) {
 			///////// Department//////////
-			Department department1 = new Department();
+			Department department1 = new Department("HR",511);
 			System.out.print(ANSI_BLUE + "Enter Department Name: ");
 			department1.setDepartementName(sc.next());
 			System.out.print(ANSI_BLUE + "Enter Department Size: ");
@@ -72,9 +73,9 @@ public class TaskTest {
 						System.out.print(ANSI_BLUE + "Enter Course ID: ");
 						course1.setCourseID(sc.nextInt());
 						///////// Mark//////////
-						System.out.print(ANSI_BLUE + "Enter Mark: ");
+						System.out.print(ANSI_BLUE + "Enter Math Mark: ");
 						course1.mark1.setMathMark(sc.nextInt());
-						student.courseList.add(course1);
+						student.courseList.add(course1);	
 						System.out.println(green
 								+ "Do you want to add another Course? Press (1) if yes, else Press (2) to continue.");
 						int option4 = sc.nextInt();
