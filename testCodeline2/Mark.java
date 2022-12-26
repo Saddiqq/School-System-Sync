@@ -5,7 +5,7 @@ public class Mark {
 	private int arabicMark;
 	private int englishMark;
 	
-	Double d = Double.valueOf(arabicMark);
+	Double d = Integer.parseInt(englishMark);
 	
 	
 	
