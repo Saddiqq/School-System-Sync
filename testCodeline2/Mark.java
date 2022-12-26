@@ -5,7 +5,9 @@ public class Mark {
 	private int arabicMark;
 	private int englishMark;
 	
-	Double d = Double.valueOf(mathMark);
+	Double d = Double.valueOf(arabicMark);
+	
+	
 	
 ////Math Marks////
 	public void setMathMark(int mathMark) {
