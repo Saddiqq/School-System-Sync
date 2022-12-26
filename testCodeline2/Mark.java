@@ -5,9 +5,6 @@ public class Mark {
 	private int arabicMark;
 	private int englishMark;
 	
-	Double d = Integer.parseInt(englishMark);
-	
-	
 	
 ////Math Marks////
 	public void setMathMark(int mathMark) {
