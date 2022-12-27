@@ -9,11 +9,7 @@ public class Department {
 
 	
 	//constructor//
-	public Department(String departementName, int departementId) {
-		System.out.printf("This is a Constructor    " +departementName+ "    " +departementId);
-		this.departementName = departementName;
-		this.departementId = departementId;
-	}
+	
 	
 	//Teacher teacher1 = new Teacher();
 	ArrayList<Teacher> teacherList = new ArrayList<Teacher>();

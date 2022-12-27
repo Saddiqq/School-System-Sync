@@ -1,11 +1,17 @@
 package testCodeline2;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class TaskTest {
 
+
+	
+                     
 	public static final String green = "\u001B[92m";
 	public static final String ANSI_BLUE = "\u001B[96m";
 	public static final String white = "\033[37m";
@@ -13,14 +19,17 @@ public class TaskTest {
 	public static final String ANSI_purple = "\033[35m";
 	public static final String cyan = "\033[36m";
 	public static final String red = "\033[31m";
+	public static PrintWriter output;
+	
+	public static void main(String[] args) throws IOException {
 
-	public static void main(String[] args) {
+		
 
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Department> departmentList = new ArrayList<Department>();
 		Stack<String> stackHistory = new Stack<String>();
-
+		
 		System.out.println(green + "#######      School Registry System    ######");
 		System.out.println("                                       ");
 		System.out.println("                                       ");
@@ -49,7 +58,7 @@ public class TaskTest {
 		while (condtion1) {
 			///////// Department//////////
 			// ***constructor line****
-			Department department1 = new Department("HR", 511);
+			Department department1 = new Department();
 
 			System.out.print(ANSI_BLUE + "Enter Department Name: ");
 			String depName = sc.next();
@@ -57,21 +66,21 @@ public class TaskTest {
 			stackHistory.push(depName);
 
 			System.out.print(ANSI_BLUE + "Enter Department Size: ");
-			String depSize = sc.next();
-			department1.setDepartementId(sc.nextInt());
-			stackHistory.push(depSize);
+			Integer depSize = sc.nextInt();
+			department1.setDepartementId(depSize);
+			stackHistory.push(depSize.toString());
 
 			//////////////// Teacher/////////////
 			while (condtion2) {
 				Teacher teacherr = new Teacher();
 				System.out.print(ANSI_BLUE + "Enter Teacher Name: ");
 				String teachName = sc.next();
-				teacherr.setTeacherName(sc.next());
+				teacherr.setTeacherName(teachName);
 				stackHistory.push(teachName);
 
 				System.out.print(ANSI_BLUE + "Enter Teacher id: ");
 				Integer teachId = sc.nextInt();
-				teacherr.setTeacherID(sc.nextInt());
+				teacherr.setTeacherID(teachId);
 				stackHistory.push(teachId.toString());
 
 				/////////////// Student////////////////
@@ -79,12 +88,12 @@ public class TaskTest {
 					Student student = new Student();
 					System.out.print(ANSI_BLUE + "Enter Student Name: ");
 					String studName = sc.next();
-					student.setStudentName(sc.next());
+					student.setStudentName(studName);
 					stackHistory.push(studName);
 
 					System.out.print(ANSI_BLUE + "Enter Student ID: ");
 					Integer studId = sc.nextInt();
-					student.setStudentID(sc.nextInt());
+					student.setStudentID(studId);
 					stackHistory.push(studId.toString());
 
 					///////// Course/////////
@@ -92,19 +101,19 @@ public class TaskTest {
 						Course course1 = new Course();
 						System.out.print(ANSI_BLUE + "Enter Course Name: ");
 						String coursceNm = sc.next();
-						course1.setCourseName(sc.next());
+						course1.setCourseName(coursceNm);
 						stackHistory.push(coursceNm);
 
 						System.out.print(ANSI_BLUE + "Enter Course ID: ");
 						Integer courseIdScanner = sc.nextInt();
-						course1.setCourseID(sc.nextInt());
+						course1.setCourseID(courseIdScanner);
 						stackHistory.push(courseIdScanner.toString());
 
 						///////// Mark//////////
 						System.out.print(ANSI_BLUE + "Enter Math Mark: ");
-						String mathMRK = sc.next();
-						course1.mark1.setMathMark(sc.nextInt());
-						stackHistory.push(mathMRK);					
+						Integer mathMRK = sc.nextInt();
+						course1.mark1.setMathMark(mathMRK);
+						stackHistory.push(mathMRK.toString());					
 						student.courseList.add(course1);
 						
 						System.out.println(green
@@ -195,9 +204,22 @@ public class TaskTest {
 
 			}
 			System.out.println(white+ " Input History:");
-			for (String stackkkk: stackHistory) {
-				System.out.println(stackkkk);
-			}
+			
+		
+				
+				File file = new File("C:\\Users\\Lenovo\\Documents\\GitHub\\history.txt");
+				
+				FileWriter fileWriter = new FileWriter(file);
+				for (String stackkkk: stackHistory) {
+					fileWriter.write("\n \n \n \n ");
+					
+					fileWriter.write(stackkkk);
+					
+				}
+				fileWriter.close();
+				
+				
+			
 		
 			System.out.println(red + " Program Terminated. ");
 		}

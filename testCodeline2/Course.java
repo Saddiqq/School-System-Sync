@@ -1,5 +1,9 @@
 package testCodeline2;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.OpenOption;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Course {
@@ -43,6 +47,10 @@ public class Course {
 //	}
 //	
 	
+	
+	//public static OutputStream newOutputStream(Path path,
+         //   OpenOption... options)
+       //             throws IOException 	
 	
 	
 	

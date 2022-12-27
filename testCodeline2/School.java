@@ -36,7 +36,7 @@ public class School {
 	
 	
 	void addDepartement(String departementName) {
-		Department newDepartment = new Department("HR",511);
+		Department newDepartment = new Department();
 		newDepartment.setDepartementName(departementName);
 		Dep.add(newDepartment);
 	}
