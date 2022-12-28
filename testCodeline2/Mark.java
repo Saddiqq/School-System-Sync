@@ -29,7 +29,5 @@ public class Mark {
 	public int getEnglishMark() {
 		return englishMark;
 	}
-	
-	
-	
+
 }

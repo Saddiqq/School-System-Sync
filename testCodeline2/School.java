@@ -1,13 +1,12 @@
 package testCodeline2;
 import java.util.ArrayList;
 
-
 public class School {
 	private String schoolName;
 	private String schoolLocation;
 	private int schoolId;
 	
-	ArrayList<Department> Dep = new ArrayList<Department>();
+	ArrayList<Department> Dep = new ArrayList<Department>(); //TODO: Use camel casing
 	
 	/////School Name/////
 	public void setSchoolName(String schoolName) {
@@ -32,14 +31,17 @@ public class School {
 	public int getSchoolId() {
 		return schoolId;
 	}
-	
-	
-	
+
+	public void setDep(ArrayList<Department> dep) {
+		Dep = dep;
+	}
+
+/*
 	void addDepartement(String departementName) {
 		Department newDepartment = new Department();
 		newDepartment.setDepartementName(departementName);
 		Dep.add(newDepartment);
-	}
+	}*/
 	
 	
 	

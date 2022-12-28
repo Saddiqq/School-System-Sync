@@ -9,9 +9,7 @@ public class Teacher {
 	private String teacherCourse;
 	//Student student1 = new Student();
 	ArrayList<Student> studentList = new ArrayList<Student>();
-	
-	
-	
+
 ////Teacher Name////
 	public void setTeacherName(String teacherName) {
 		this.teacherName = teacherName;		
@@ -35,18 +33,11 @@ public class Teacher {
 	public String getTeacherCourse() {
 		return teacherCourse;
 	}
-	
-	
+
 //	void addStudent(String studentName) {
 //		Student newStudent = new Student();
 //		newStudent.setStudentName(studentName);
 //		stud.add(newStudent);
 //	}
-//	
-	
-	
-	
-	
-	
-
+//
 }

@@ -5,15 +5,14 @@ import java.util.ArrayList;
 public class Department {
 	private String departementName;
 	private int    departementId;
-	
 
-	
-	//constructor//
-	
-	
 	//Teacher teacher1 = new Teacher();
-	ArrayList<Teacher> teacherList = new ArrayList<Teacher>();
-	
+	ArrayList<Teacher> teacherList = new ArrayList<Teacher>(); //TODO: Initialize in where you use it not here
+
+
+	//constructor//
+
+
 /////Department Name/////
 	public void setDepartementName(String departementName) {
 		this.departementName = departementName;

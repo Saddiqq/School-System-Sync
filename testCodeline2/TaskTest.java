@@ -1,20 +1,12 @@
 package testCodeline2;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.BufferedReader;  
-import java.io.FileReader;  
 
 public class TaskTest {
 
-
-	
-                     
 	public static final String green = "\u001B[92m";
 	public static final String ANSI_BLUE = "\u001B[96m";
 	public static final String white = "\033[37m";
@@ -22,11 +14,10 @@ public class TaskTest {
 	public static final String ANSI_purple = "\033[35m";
 	public static final String cyan = "\033[36m";
 	public static final String red = "\033[31m";
-	public static PrintWriter output;
+	public static PrintWriter output; // Not using this; remove
 	
 	public static void main(String[] args) throws IOException {
 
-		
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Department> departmentList = new ArrayList<Department>();
@@ -41,13 +32,10 @@ public class TaskTest {
 			System.out.println(" ----- 4. Search External file  -----");
 			System.out.println(" ----- 5. Exit -----");
 			int menuOption1 = sc.nextInt();
-			
-			
+
 			if(menuOption1 == 1) {
 
-		System.out.println(green + "#######      School Registry System    ######");
-		System.out.println("                                       ");
-		System.out.println("                                       ");
+		System.out.println(green + "#######      School Registry System    ###### \n\n");
 
 		System.out.print(ANSI_BLUE + "Enter School Name: ");
 		String name = sc.next();
@@ -271,12 +259,8 @@ public class TaskTest {
 				    }		
 		       
 		}  
-					  
-		
-				//fileWriter.close();
-		
-			
-			
+		//fileWriter.close();
+
 			else {
 			System.out.println(red + " Program Terminated. ");
 			menuOption = false;

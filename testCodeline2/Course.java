@@ -6,12 +6,13 @@ import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+//TODO: Remove unused imports
 public class Course {
 	
-	private int courseId;
+	private int courseId; // int vs Integer; Boxing and Unboxing
 	private String courseName;
-	private int noOfChapters;
-	Mark mark1 = new Mark();
+	private int noOfChapters; // int vs Integer; Boxing and Unboxing
+	Mark mark1 = new Mark(); // Never initialize in class
 	
 	//ArrayList<Mark> markList = new ArrayList<Mark>();
 	
