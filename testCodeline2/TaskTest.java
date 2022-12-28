@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -80,9 +81,16 @@ public class TaskTest {
 			stackHistory.push(depName);
 
 			System.out.print(ANSI_BLUE + "Enter Department Size: ");
-			Integer depSize = sc.nextInt();
-			department1.setDepartementId(depSize);
-			stackHistory.push(depSize.toString());
+			String depSize;
+			while (!sc.hasNextInt()) {
+			    System.out.println("Invalid input. Please enter an integer value for the school ID.");
+			    depSize = sc.next(); // discard the invalid input
+			}
+			
+		
+	        
+		//	department1.setDepartementId(depSize);
+			stackHistory.push("");
 
 			//////////////// Teacher/////////////
 			while (condtion2) {
@@ -164,7 +172,7 @@ public class TaskTest {
 			condtion3 = true;
 			int option = sc.nextInt();
 			if (option != 1) {
-				condtion1 = false;
+				condtion1 = false; 
 
 				System.out.println("                                       ");
 				System.out.println("                                       ");
@@ -219,10 +227,10 @@ public class TaskTest {
 		}
 			}
 			else if(menuOption1 == 2) {
-			System.out.println(white+ " Input History:");
-			
-			
-	
+				
+				
+				
+				System.out.println(white+ " Input History:");
 				File file = new File("C:\\Users\\Lenovo\\Documents\\GitHub\\history.txt");
 				
 				FileWriter fileWriter = new FileWriter(file);
@@ -237,26 +245,32 @@ public class TaskTest {
 	
 			
 			else if(menuOption1 == 4) {
-				 
-					        String line;  
-					        int count = 0;  
-					          
-					   
-					        FileReader file = new FileReader("C:\\Users\\Lenovo\\Documents\\GitHub\\history.txt");  
-					        BufferedReader br = new BufferedReader(file);  
-					              
-					      
-					        while((line = br.readLine()) != null) {  
-					            
-					            String words[] = line.split(" ");  
-					      
-					            count = count + words.length;  
-					        }  
-					          
-					        System.out.println("Number of words present in given file: " + count);  
-					        br.close();  
-					       
-					    }  
+				
+				System.out.print(" Enter Word that you want to search? ");
+		        String inputWord = sc.next();
+		        int wordCounter = 0;
+		        File fileC = new File("C:\\\\Users\\\\Lenovo\\\\Documents\\\\GitHub\\\\history.txt");
+		        try {
+		        	Scanner scSearch = new Scanner(fileC);
+		        	while(scSearch.hasNext()){
+		        		String[] wordCount = scSearch.nextLine().split(" ");
+		        		for(int i = 0; i < wordCount.length; i++) {
+		        			//System.out.println(wordCount[i]);
+		        		if(inputWord.equalsIgnoreCase(wordCount[i])) {
+		        			wordCounter++;
+		        		}
+		        	}  
+
+		        	} 
+		        	System.out.println(" The Word exists " + wordCounter + " Times ");
+		        	scSearch.close();
+		        }
+		        catch (FileNotFoundException e) {
+				      System.out.println("An error occurred.");
+				      e.printStackTrace();
+				    }		
+		       
+		}  
 					  
 		
 				//fileWriter.close();
