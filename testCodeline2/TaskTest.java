@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.BufferedReader;  
+import java.io.FileReader;  
 
 public class TaskTest {
 
@@ -24,12 +26,24 @@ public class TaskTest {
 	public static void main(String[] args) throws IOException {
 
 		
-
 		School school = new School();
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Department> departmentList = new ArrayList<Department>();
 		Stack<String> stackHistory = new Stack<String>();
-		
+		Boolean menuOption = true; 
+
+		while(menuOption) {
+			System.out.println(" ----- Choose an option -----");
+			System.out.println(" ----- 1. Object Chaining -----");
+			System.out.println(" ----- 2. Write to External file  -----");
+			System.out.println(" ----- 3. View History -----");
+			System.out.println(" ----- 4. Search External file  -----");
+			System.out.println(" ----- 5. Exit -----");
+			int menuOption1 = sc.nextInt();
+			
+			
+			if(menuOption1 == 1) {
+
 		System.out.println(green + "#######      School Registry System    ######");
 		System.out.println("                                       ");
 		System.out.println("                                       ");
@@ -199,14 +213,16 @@ public class TaskTest {
 				System.out.println("                                       ");
 				System.out.println("                                       ");
 				System.out.println("                                       ");
-
-				
-
+			
 			}
+			
+		}
+			}
+			else if(menuOption1 == 2) {
 			System.out.println(white+ " Input History:");
 			
-		
-				
+			
+	
 				File file = new File("C:\\Users\\Lenovo\\Documents\\GitHub\\history.txt");
 				
 				FileWriter fileWriter = new FileWriter(file);
@@ -216,14 +232,44 @@ public class TaskTest {
 					fileWriter.write(stackkkk);
 					
 				}
-				fileWriter.close();
-				
-				
+				fileWriter.close();	
+			}
+	
 			
+			else if(menuOption1 == 4) {
+				 
+					        String line;  
+					        int count = 0;  
+					          
+					   
+					        FileReader file = new FileReader("C:\\Users\\Lenovo\\Documents\\GitHub\\history.txt");  
+					        BufferedReader br = new BufferedReader(file);  
+					              
+					      
+					        while((line = br.readLine()) != null) {  
+					            
+					            String words[] = line.split(" ");  
+					      
+					            count = count + words.length;  
+					        }  
+					          
+					        System.out.println("Number of words present in given file: " + count);  
+					        br.close();  
+					       
+					    }  
+					  
 		
+				//fileWriter.close();
+		
+			
+			
+			else {
 			System.out.println(red + " Program Terminated. ");
+			menuOption = false;
+			}
 		}
-		
+			
+			
 		sc.close();
 
 	}
